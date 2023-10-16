@@ -1,0 +1,59 @@
+<!doctype html><meta charset=utf-8>
+<title>Retro F1 Manager</title>
+<meta name=application-name content=RF1M>
+<meta name=description content="Retro Formula One Manager running in an online ZX Spectrum Emulator in Javascript | F9 – menu | F11 – full screen">
+<meta name=author content='Jan Bobrowski | Ethan Friedman'>
+<meta name=viewport content="width=768,user-scalable=no"><meta name=theme-color content=#000>
+<link rel=icon href=/qaop/icon.png><link rel=mask-icon href=/qaop/icon-mono.png color=#c01>
+<link rel=canonical href=/index.html>
+<style>
+html{height:100%;overflow:hidden}body{min-height:100%;margin:0;background:#000;color:#fff;font:13px sans-serif}body.full:not(.move):not(.pause){cursor:none}#c,#k,#l,#m,#p,#pb,#r{position:fixed}*{outline:0}#s{width:100%;height:100%}#m,#pb{visibility:hidden}#m.v,#pb.v{visibility:visible}.anim #c,.anim #l,.anim #r{transition:width .2s,height .2s,top .2s,left .2s,right .2s,bottom .2s}#l>div,#rtabs,#rtabs>*,#snaps,#sp,.bbutt{position:absolute}#l,#r{top:0;bottom:0}#l{left:0;width:256px;background:rgba(40,0,0,.9);color:#c44}#r{right:0;width:272px;background:rgba(0,35,0,.9);color:#4b4}#l>div{top:0;left:0;right:0;bottom:20px;padding:16px 16px 16px 32px}#r>div{margin:12px 0 8px 16px}#l button,#l select{background:#c44}#r button{background:#4b4}#m,#sp,h1{text-align:center}#op{display:flex;flex-flow:row wrap;line-height:2}#op>*{flex:auto}#k{cursor:default;left:0;right:0;padding:0 .7vw;flex-wrap:wrap;font:3vw/1.3 helvetica,sans-serif;-webkit-user-select:none}#k>*{background:#345;width:9.1vw;margin:.38vw;border-radius:.3vw}#k>:not(.t){text-indent:.5vw}#k>.t{font-size:67%;text-align:center;display:flex;align-items:center;justify-content:center;text-transform:uppercase}#k>.p{position:relative;top:.3vw}h1{font:33px/1 sans-serif;margin:1em 0 0;letter-spacing:-2px;text-shadow:#000 0 1px 1px;cursor:default}.update h1{color:#fc0;text-shadow:0 0 9px #fc0}ul{padding:0;margin:0}a{color:inherit;text-decoration:inherit}button:not([hidden]),select{display:inline-block;border:0;margin:4px 4px 4px 0;padding:1px 1em;border-radius:4px;color:#000;font:inherit;line-height:1.4em}button:active:not(:disabled){position:relative;top:1px}button:disabled{opacity:.6}button:focus,select:focus{outline:0}#l button:focus,select:focus{box-shadow:0 0 0 1px #000,0 0 4px 1px #c44}#r button:focus{box-shadow:0 0 0 1px #000,0 0 4px 1px #4b4}button.active::before{display:block;float:left;content:'\2022';width:1em;margin-left:-1em}button::-moz-focus-inner{border:0;padding:0;margin:0}#m{width:320px;top:0;left:50%;margin-left:-160px;font:17px calibri,sans-serif;padding:4px 1em;color:#ffc;background:rgba(147,121,0,.3);text-shadow:0 0 3px #000;border-radius:4px;transition:top .1s}#m.v{top:9px}#pb{top:0;left:0;right:0;height:2px;background-color:#222}#pb>*{width:0;height:2px;background:currentColor}#pb.a{animation:2s linear infinite pb;background-size:32px 32px;background-image:linear-gradient(-45deg,currentColor 25%,#222 25%,#222 50%,currentColor 50%,currentColor 75%,#222 75%,#222)}@keyframes pb{from{background-position:32px 32px}to{background-position:0 0}}#p{display:none}.pause #p{display:block}#rtabs{top:48px;bottom:0;left:16px;right:0}#rtabs>*{top:0;left:0;right:0;bottom:0;visibility:hidden}body.noaudio .audio{display:none}#l #vol{background:0 0;width:133px;padding:.7em 5px;vertical-align:top}#vol:active{top:0}#vol *{border-radius:2px}#vol>*{margin:-2px 0;background:#622}#vol>*>*{height:4px;width:50%;background:#a33}#vol>*>*>*{height:16px;width:8px;margin:-6px -4px;float:right;background:#c44;box-shadow:#000 0 0 2px}#vol:disabled>*>*{visibility:hidden}.mute #vol>*>*{background:0 0}.info{font:italic 100% candara,sans-serif}dl{margin:9px 0}dt{height:0}dd{margin:0 0 0 4em}.keys dt{font:95% monospace}.tabv>.active{border-radius:4px 4px 0 0}.tabv>.active::before{content:none}.ls{list-style:none;margin:0;padding:1px 0 8px}.ls>*{padding:1px}.ls>*>a{padding:0 .5em;cursor:default}.ls:focus>.sel>a{outline:dotted 1px}.ls>*>a:hover{background:rgba(0,0,0,.5)}.ls.sel>*>a{padding-left:1em}.ls.sel>.sel:before{display:block;position:relative;float:left;content:'\25AA';width:1em;text-align:center;margin-right:-1em}.ls input{color:inherit;border:1px solid;background:0 0;margin:-2px 0 -2px 1em;outline:0}.ls,.sc{overflow:auto;outline:0;scrollbar-color:currentColor transparent;scrollbar-width:thin;-webkit-overflow-scrolling:touch}::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-thumb{background:currentColor;opacity:.8;border-radius:6px}#snaps{top:0;left:0;right:0;bottom:42px}.bbutt{bottom:10px}#kh{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#0a0a0a;text-align:center}#kh>*{max-width:100%;max-height:100%}.embed #l,.embed #r{display:none}@media print{#c{position:static;width:6.4in!important;height:4.96in!important}#k,#l,#p,#r{display:none}}
+</style>
+<body style=cursor:wait>
+<div id=sp style='top:45%;left:0;right:0;margin:-22px 0 0;font:35px/1.3 sans-serif;letter-spacing:-2px;opacity:.8'>
+<b style=color:#c00>Q</b><b style=color:#970>a</b><b style=color:#180>o</b><b style=color:#049>p</b><span style=color:#508;font-size:90%>/JS</span>
+<div style=color:#666;font-size:11px;letter-spacing:2px><a href=/index.html>Retro F1 Manager</a></div>
+</div>
+<div id=c tabindex=-1>
+<canvas id=s><q>© 1982 Sinclair Research Ltd</q></canvas>
+<div id=k></div>
+<svg id=p viewBox=0,0,31,31 style="bottom:1%;left:50%;width:6vh;margin:0 -3vh;fill:#333;mix-blend-mode:screen" data-c=pause><path d="m0 4q0-4 4-4h23q4 0 4 4v23q0 4-4 4h-23q-4 0-4-4m7-2h6v-19h-6m11 19h6v-19h-6"></svg>
+</div>
+<div id=l><div class=sc>
+<h1>Retro <b>F1</b> Manager</h1>
+<br>
+<a href=/index.html style='display:block;margin:0 0 2em;text-align:center;font-size:85%'>Developed by Ethan Friedman, running in QAOP by Jan Bobrowski</a>
+<div id=op>
+<button disabled data-c=pause>Pause</button>
+<button disabled data-c=remember>Save</button>
+<button disabled data-c=restore>Load</button>
+<button disabled data-c=open>Load from disk</button>
+<div class=audio>
+<button disabled data-c=mute>Mute</button>
+<button disabled id=vol title=Volume><div><div><div></div></div></div></button>
+</div>
+</div>
+<div class=info style=margin-top:1em>Emulator Controls:<dl class=keys>
+<dt>F1<dd><a href=/qaop/info.html target=_top>emulator info</a><dt>F2<dd>save<dt>F3<dd>load<dt>F7<dd>black &amp; white<dt>F8<dd>keyboard layout<dt>F9<dd>menu<dt>F11<dd>full screen<dt>Pause<dd>pause<dt>Ctrl-O<dd>Load from disk<dt>Ctrl-S<dd>Save to disk<dt></div>
+</div>
+<a style='position:absolute;bottom:4px;left:0;right:0;text-align:center;letter-spacing:4px;font-size:11px;opacity:.7' href=/index.html rel=author>© Jan Bobrowski | Ethan Friedman</a>
+</div>
+<div id=r><div>
+<span class=tabv>
+<button data-for=userg data-down=userg hidden>User</button>
+<button data-for=snapp data-down=snaps>Saves</button>
+</span>
+<div id=rtabs>
+<ul id=userg class=ls tabindex=0></ul>
+<div id=snapp><ul id=snaps class='ls sel' tabindex=0></ul><div class=bbutt><button disabled data-c=svsna>Save to disk</button>
+<button disabled data-c=rmsna>Remove</button></div>
+</div>
+</div>
+</div></div>
+<div id=m></div>
+<div id=kh></div>
+<div id=pb><div></div></div>
+<div style=visibility:hidden><a rel=help href=/qaop/info target=_top>help</a><a id=save></a><input id=open type=file accept='.tap,.z80,.sna,.scr,.rom'>
+<form id=submit hidden onsubmit='event.preventDefault();document.activeElement.onenter()'></form><input id=bb>
+</div>
+<script src=/qaop/qaop.js></script>
