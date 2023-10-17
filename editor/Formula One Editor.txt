@@ -1,0 +1,224 @@
+Formula One Editor
+==================
+
+Windows version written by BadBeard and Paul Dunn in August 2007.
+
+Based on an idea by Nuno Medeiros (Kihality).
+
+
+
+Formula One is already built into the program so just edit and go!
+
+Only snapshots (.sna) are currently supported.
+
+
+Editing the Graphics
+====================
+
+Borders
+=======
+To the left of the main editing area and located just above each side
+on view car you will see six attribute squares. These are the border
+colours that are associated with each pair of cars. Simply click a
+square to rotate through the cycle of available colours. The attribute
+left showing will be the border when the car is, for instance, winning
+a race. Available colours are Black, Blue, Red, Magenta, Green, Cyan,
+Yellow and White.
+
+
+Cars
+====
+
+There are two types of car shown, side view (SV) and overhead view (OV).
+The SV is the one that is shown racing on the track and the OV is the
+one that is shown during a pitstop. Simply choose your ink and paper
+colours from the palettes and then click on the desired car. The first
+car of a team is always shown as SV and the second car is shown as OV.
+When you click on a car your selected colour will be applied to the car.
+If you change for example the SV attributes of car 1 then you have also
+applied the same change to the SV of car 2.
+
+It is up to you what colours you give the side on and OV but remember
+that they are the same car. It will look a bit silly if you drive into a
+pitstop with a blue car and emerge in a red one!
+
+As you click on a car the six boxes in the bottom area will also update.
+
+The two large boxes on the left are the car numbers. You can click on
+these to edit the numbers which will then be shown on the relevant car
+in the main editing area. The lower number of a team is shown on the SV
+and the higher number on the OV. Of course, both numbers will appear on
+both side and OV.
+
+When you click on a car number it will be updated in the selected colour.
+Please note however that the SV can have a bright or basic colour but the
+OV must contain a basic colour only and no bright is allowed.
+
+If you have bright selected and click an OV car then the two car number
+boxes will be shown as basic colour. If you click the SV with bright
+selected then the car number boxes will be shown bright. This way you can
+see what your numbers will look like in both bright and basic colours
+with ease.
+
+The two larger boxes to the right are the numbers that will be shown on the
+qualifying screen with the two smaller boxes showing how they will look in
+the game itself. Click on the larger boxes to the edit the numbers which
+you should really be matching to the number on the cars. To change the
+colour, click on each corner of the SMALLER boxes.
+
+During a pitstop tyres will always be changed black so it is my
+recommendation that you keep the tyres black. If you are wacky enough to
+have, say, magenta tyres then you will not be too fazed when they suddenly
+change black during a pitstop and then back to magenta again upon racing.
+
+When changing the numbers, please read 'Associate Number' below.
+
+
+Editing the data
+================
+
+Unit of Distance
+----------------
+
+Upon selection of either mile or kilometre all data is updated accordingly.
+You can switch between the two options at any time.
+
+Start Year
+----------
+
+Range is 1985 (default) to 9000. Should keep you going for a few years!
+
+Drivers
+-------
+
+Minimum 1 character, 10 maximum.
+
+Country
+-------
+
+Minimum 1 character, 8 maximum.
+
+Track
+-----
+
+Minimum 1 character, 18 maximum.
+
+Teams
+-----
+
+Minimum 1 character, 8 maximum.
+
+Managers
+--------
+
+Minimum 1 character, 10 maximum.
+
+Points
+------
+
+The number of drivers that can have points awarded is between 1 and 8.
+The number of points can be in the range 1-15.
+
+
+Track Lengths
+-------------
+
+If miles selected: Minimum 1, 	 maximum 6.21
+If km's  selected: Minimum 1.61, maximum 9.99
+
+Lap Record
+----------
+
+Between 1 and 4 minutes.
+Enter like this example: 1m 36.5s would be entered as 1.365
+
+Year Lap Record Set
+-------------------
+Must be less than start year and anywhere upto 100 years before.
+
+Number of Laps
+--------------
+
+Minimum 10, maximum 99.
+
+Associate Number
+----------------
+
+If you make graphical changes to the number graphics then this is the
+place to associate your new number with an old one. As an example you
+might have designed a '99' graphic for what was originally car
+number 1. You must edit the 1 to 99 here as the game is unable to tell
+what is 99, 33, 1 or whatever by looking at the graphic.
+All numbers must be different.
+
+
+Gameplay
+========
+To call your car in for a pitstop or when betting, if your car number
+is less than ten then please enter the number preceded by a zero. 
+You have a car numbered 2 for example. To call this car in for a pitstop
+or to place a bet on this car, enter 02.
+
+
+Please note that once your changes have been made then continue to save
+a snapshot progress. Do not use the 'save' function in the game.
+
+Extra Info.
+===========
+
+There is an extra driver, Peroni (default), who does not feature in the list
+of drivers that can become part of a team and therefore cannot be selected
+to drive. However, this person can still be used as a lap record holder or
+last year's winner.
+
+
+A Special Thankyou
+==================
+
+to Paul Dunn. I can't tell you how much this guy has helped me with my Delphi
+over the last few years, a huge amount that's for sure. Without him, this
+software and anything else I manage to produce in the future would never have
+seen the light of day. He must be sick to the back teeth of me by now but
+never shows it. So THANK YOU BIG D!
+
+
+Credits
+=======
+
+Formula One was originally written by G.B. Munday and B.P. Wheelhouse and
+published by CRL Group PLC in 1985.
+
+Nuno Medeiros (Kihality) for asking if graphical changes
+could be incorporated into the original editor written for ZX Spectrum.
+This was written especially for you! xxx
+
+Thanks for your bug reports as well.
+
+Original Program Bugs
+=====================
+
+Bug1:
+There is a tiny attribute error in the original program... Whenever it
+prints the current GP name on the race screen, one letter sometimes
+appears darker than the others. This can be corrected with
+Poke $FF08,$4E (65288,78)
+
+-Corrected.
+
+Bug2:
+Everytime a season is completed you need to reselect your sponsors.
+You see the message 'Press A to M for Selection'
+The space between the 'A' and 'to' is overwritten with other data.
+This has nothing to do with the editor.
+
+Bug3:
+Sometimes when there are less than six cars racing the race timer board
+data can have bad data showing in the blanks. For instance, if two cars
+are racing, bad data will appear momentarily where the lap times of cars
+3-6 would have been. This has nothing to do with the editor.
+
+
+
+This software is provided 'as is'. Use at your own risk.
+
+bad_beard AT hotmail.com
